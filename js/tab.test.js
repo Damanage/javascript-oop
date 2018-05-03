@@ -5,7 +5,7 @@ import Tab from './tab';
 const dom = new jsdom.JSDOM(`<!DOCTYPE html>`);
 const document = dom.window.document;
 
-describe('Tab', () => {
+xdescribe('Tab', () => {
     let tab;
     let activeTab;
     let handleClick = jest.fn();

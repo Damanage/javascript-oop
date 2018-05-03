@@ -7,7 +7,7 @@ const panelElements = document.querySelectorAll('.panel');
 
 const tabBar = new TabBar({
     element: tabBarElement,
-    tabs: tabElements.map(element => new Tab({ element })),
+    tabs: tabElements.map(element => new Tab({ element , onActivate: (obj)=>{tabBar.handleActivate(obj)}})),
     onChange: handleChange
 });
 
