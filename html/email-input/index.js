@@ -5,7 +5,7 @@ class EmailInput extends TextInput {
      * @param {{ tag: string, id: string, className: string, type: string, name: string, disabled: boolean, required: boolean, value: string, minlength: string, maxlength: string }} args 
      */
     constructor(args) {
-        super()
+        super({...args})
     }
     
     /**
@@ -17,7 +17,8 @@ class EmailInput extends TextInput {
      * @returns {boolean}
      */
     get isValid() {
-        
+        let pattern = /^[a-zA-Z0-9'._%+-]+@[a-zA-Z0-9-][a-zA-Z0-9.-]*\.[a-zA-Z]{2,63}$/.test(super.value);
+        return pattern ? true : false
     }
 }
 

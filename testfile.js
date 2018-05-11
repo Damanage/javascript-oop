@@ -1,3 +1,3 @@
-const TextInput = require('./html/text-input');
-let tom =  new TextInput({value: 'pfsjdfhskjdfhsl', minlength: 2, maxlength: 16 });
+const EmailInput = require('./html/email-input');
+let tom =  new EmailInput({ value: 'olegpolyakov@outlook.com', minlength: 2, maxlength: 16 });
 console.log(tom.isValid)
