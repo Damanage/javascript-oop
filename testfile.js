@@ -1,3 +1,3 @@
-const Input = require('./html/checkbox');
-let tom = new Input({id: '12', className: 'Input-class blessing-eggs --formated', value: '42'});
-console.log(tom)
+const TextInput = require('./html/text-input');
+let tom =  new TextInput({value: 'pfsjdfhskjdfhsl', minlength: 2, maxlength: 16 });
+console.log(tom.isValid)
