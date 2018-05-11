@@ -21,9 +21,11 @@ class EventEmitter {
      * @param {*} arg Данные передаваемые слушателю
      */
     emit(event, arg) {
-        this.events[event].forEach(element => {
-            element(arg)
-        });
+        if (this.events[event]) {
+            this.events[event].forEach(element => {
+                element(arg)
+            });
+        }
     }
 }
 

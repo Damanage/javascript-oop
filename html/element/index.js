@@ -8,7 +8,7 @@ class Element extends EventEmitter {
         super()
         this.tag = tag;
         this.id = id;
-        this.classGroup = className.split('')
+        this.classGroup = className.split(' ')
     }
 
     /**
