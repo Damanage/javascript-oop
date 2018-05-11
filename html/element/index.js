@@ -17,7 +17,7 @@ class Element extends EventEmitter {
      * @returns {string}
      */
     get className() {
-        return this.classGroup.join(' ')
+        return this.classGroup.join(' ').trim()
     }
 
     /**
