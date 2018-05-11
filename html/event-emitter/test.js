@@ -1,6 +1,6 @@
 const EventEmitter = require('./');
 
-describe.only('EventEmitter', () => {
+xdescribe.only('EventEmitter', () => {
     describe('EventEmitter.on()', () => {
         test('регистрирует обработчик на событие', () => {
             let eventEmitter = new EventEmitter({});

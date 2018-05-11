@@ -5,7 +5,10 @@ class Element extends EventEmitter {
      * @param {{ tag: string, id: string, className: string }} args
      */
     constructor({ tag, id, className = '' }) {
-        
+        super()
+        this.tag = tag;
+        this.id = id;
+        this.classGroup = className.split('')
     }
 
     /**
@@ -14,7 +17,7 @@ class Element extends EventEmitter {
      * @returns {string}
      */
     get className() {
-        
+        return this.classGroup.join(' ')
     }
 
     /**
@@ -23,7 +26,7 @@ class Element extends EventEmitter {
      * @param {string} className 
      */
     addClass(className) {
-        
+        if(!this.hasClass(className))(this.classGroup.push(className))      
     }
 
     /**
@@ -32,7 +35,7 @@ class Element extends EventEmitter {
      * @param {string} className 
      */
     removeClass(className) {
-        
+        this.classGroup = this.classGroup.filter( e => e !== className)
     }
 
     /**
@@ -42,7 +45,7 @@ class Element extends EventEmitter {
      * @returns {boolean}
      */
     hasClass(className) {
-        
+        return this.classGroup.some( element => {return element === className} );
     }
 
     /**
@@ -51,7 +54,12 @@ class Element extends EventEmitter {
      * @param {string} className 
      */
     toggleClass(className) {
-        
+        if(this.hasClass(className)){
+            this.removeClass(className)
+        }
+        else{
+            this.addClass(className)
+        }
     }
 }
 
